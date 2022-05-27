@@ -3,7 +3,7 @@
 #include "Karp-Rabin/Karp-Rabin.h"
 #include "Morris-Pratt/Morris-Pratt.h"
 #include "Knuth-Morris-Pratt/Knuth-Morris-Pratt.h"
-
+#include "Apostolico_Crochemore/Apostolico_Crochemore.h"
 using namespace std;
 
 void print(vector<int> res){
@@ -20,12 +20,13 @@ int main(){
 //    char x[] = "abcdefghijklmnopqrstuvwxyzjkl132";
 //    char y[] = "jkl";
     char x[] = "gcatcgcagagagtatacagtacg";
-//    char y[] = "gcagcagcag";
+//    char y[] = "abcddabc";
     char y[] = "gcagagag";
 //    callBruteForce(x,y);
 //    callKarpRabin(x,y);
 //    callMorrisPratt(x,y);
-    print(KnuthMorrisPratt(y, strlen(y), x, strlen(x)));
+//    print(KnuthMorrisPratt(y, strlen(y), x, strlen(x)));
+    print(ApostolicoCrochemore(y, strlen(y), x, strlen(x)));
     return 0;
 }
 

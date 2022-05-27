@@ -8,5 +8,7 @@ add_executable(StringMatchingAlgorithms main.cpp
         graph/graph.cpp graph/graph.h
         Deterministic_Finite_Automaton/deterministic_finite_automaton.cpp Deterministic_Finite_Automaton/deterministic_finite_automaton.h
         Karp-Rabin/Karp-Rabin.cpp Karp-Rabin/Karp-Rabin.h
-        Morris-Pratt/Morris-Pratt.cpp Morris-Pratt/Morris-Pratt.h Knuth-Morris-Pratt/Knuth-Morris-Pratt.cpp Knuth-Morris-Pratt/Knuth-Morris-Pratt.h)
+        Morris-Pratt/Morris-Pratt.cpp Morris-Pratt/Morris-Pratt.h
+        Knuth-Morris-Pratt/Knuth-Morris-Pratt.cpp Knuth-Morris-Pratt/Knuth-Morris-Pratt.h
+        Apostolico_Crochemore/Apostolico_Crochemore.cpp Apostolico_Crochemore/Apostolico_Crochemore.h)
 
