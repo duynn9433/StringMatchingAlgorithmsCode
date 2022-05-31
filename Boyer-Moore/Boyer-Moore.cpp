@@ -86,14 +86,24 @@ void preBmGoodSuffix(char *x, int m, int bmGs[]) {
     for (i = 0; i < m; ++i)
         bmGs[i] = m;
     j = 0;
-    //th1: co u = x[i+1 ... m-1] = x[j+i+1 ... j+m-1]
+    //th2: khong co u = x[i+1 ... m-1] = x[j+i+1 ... j+m-1]
     for (i = m - 1; i >= 0; --i)
+        //doan v dai tu 0 den i
+        //dieu kien tương đương v là viền của x (bắt đầu từ 0)
+        //suff là đoạn dài nhất có thể k bắt đầu từ 0
         if (suff[i] == i + 1)
+            //kiem tra tu 0 den m-1-i (đối xứng với từ i --> m-1)
+            //vd: 0 |1 2 3 4 5 |6 7 (i=6)
             for (; j < m - 1 - i; ++j)
+                //=m là coi như không có v
                 if (bmGs[j] == m)
                     bmGs[j] = m - 1 - i;
-    //th2: khong co u = x[i+1 ... m-1] = x[j+i+1 ... j+m-1]
+    //th1: co u = x[i+1 ... m-1] = x[j+i+1 ... j+m-1]
     for (i = 0; i <= m - 2; ++i)
+        //suff là độ dài dài nhất v của u (có thể k bắt đầu từ 0)
+        //m-1-suff vị trí có điểm a !=c khi thực hiện suffixes
+        //m-1-i dịch từ vị trí a ra c
+        //suff =0: từ cùng phải dịch ra để gặp nó (cùng phải fail thì đến lượt nó so với kí tự đó)
         bmGs[m - 1 - suff[i]] = m - 1 - i;
 }
 
@@ -109,11 +119,14 @@ std::vector<int> BoyerMoore(char *x, int m, char *y, int n){
     /* Searching */
     j = 0;
     while (j <= n - m) {
+        //chạy đến khi gặp a !=b
         for (i = m - 1; i >= 0 && x[i] == y[i + j]; --i);
+        //trùng tất cả
         if (i < 0) {
             res.push_back(j);
             j += bmGs[0];
         }
+        //không trùng
         else
             j += max(bmGs[i], bmBc[y[i + j]] - m + 1 + i);
     }

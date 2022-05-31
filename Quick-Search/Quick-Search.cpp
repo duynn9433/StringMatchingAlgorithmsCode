@@ -10,7 +10,6 @@ using namespace std;
 
 void preQsBc(char *x, int m, int qsBc[]) {
     int i;
-
     for (i = 0; i < ASIZE; ++i)
         qsBc[i] = m + 1;
     for (i = 0; i < m; ++i)
@@ -21,10 +20,8 @@ void preQsBc(char *x, int m, int qsBc[]) {
 vector<int>  QuickSearch(char *x, int m, char *y, int n) {
     vector<int> res;
     int j, qsBc[ASIZE];
-
     /* Preprocessing */
     preQsBc(x, m, qsBc);
-
     /* Searching */
     j = 0;
     while (j <= n - m) {

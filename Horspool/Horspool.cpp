@@ -19,9 +19,11 @@ std::vector<int> Horspool(char *x, int m, char *y, int n){
     /* Searching */
     j = 0;
     while (j <= n - m) {
+        //c la vi tri dau tien so sanh cua y, right to left
         c = y[j + m - 1];
         if (x[m - 1] == c && memcmp(x, y + j, m - 1) == 0)
             res.push_back(j);
+        //shift theo bad-character
         j += bmBc[c];
     }
     return res;

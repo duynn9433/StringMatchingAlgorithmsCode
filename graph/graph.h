@@ -4,6 +4,12 @@
 
 #ifndef STRINGMATCHINGALGORITHMS_GRAPH_H
 #define STRINGMATCHINGALGORITHMS_GRAPH_H
+struct _cell{
+    int element;
+    struct _cell *next;
+};
+typedef struct _cell *List;
+
 struct _graph {
     int vertexNumber,
             edgeNumber,
