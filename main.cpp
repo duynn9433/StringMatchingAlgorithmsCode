@@ -41,10 +41,10 @@ int main(){
 //    print(KR(y, strlen(y), x, strlen(x)));
 //    print(MorrisPratt(y, strlen(y), x, strlen(x)));
 //    print(KnuthMorrisPratt(y, strlen(y), x, strlen(x)));
-//    print(ApostolicoCrochemore(y, strlen(y), x, strlen(x)));
+    print(ApostolicoCrochemore(y, strlen(y), x, strlen(x)));
 //    print(NotSoNaive(y, strlen(y), x, strlen(x)));
 //    print(StringMatchingOnOrderedAlphabets(y, strlen(y), x, strlen(x)));
-    print(ShiftOr(y, strlen(y), x, strlen(x)));
+//    print(ShiftOr(y, strlen(y), x, strlen(x)));
 
     // right to left
 //    print(BoyerMoore(y, strlen(y), x, strlen(x)));
